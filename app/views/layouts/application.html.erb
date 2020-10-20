@@ -4,12 +4,22 @@
     <title>Original</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="header">
+      <div class="header-side">
+        <a class="logo"  href="/">username</a>
+      </div>
+      <div class="header-main">
+        <div class="user_nav grid-6">
+          <a class="post" href="/">タイムカード</a>
+        </div>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>

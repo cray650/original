@@ -1,0 +1,24 @@
+<div class="main">
+    <div class="message">
+      <% if @time.hour <= 9 %>
+        <h1>おはようございます!!</h1>
+      <% else %>
+        <h1>お疲れ様です!!</h1>
+      <% end %>
+    </div>
+    <div class="day">
+      <%= "#{@year}年#{@month}月#{@day}日" %>
+    </div>
+    <div class="hour">
+      <%= "現在は#{@time.hour}時#{@time.min}分#{@time.sec}秒です"%>
+    </div>
+    <div class="circle-attend">
+      <a href="#">出勤</a>
+    </div>
+    <div class="circle-leave">
+      <a href="#">退勤</a>
+    </div>
+    <div class="main-menu">
+      <a href="#">出勤簿画面へ</a>
+    </div>
+</div>
