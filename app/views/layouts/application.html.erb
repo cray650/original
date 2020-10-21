@@ -12,10 +12,14 @@
   <body>
     <header class="header">
       <div class="header-main">
-        <%= link_to 'KINTAI', attendances_path, class: "btn"  %>
-      </div>
-      <div class="header-side">
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"  %>
+        <div class="title">
+          <%= link_to 'KINTAI', attendances_path, class: "btn"  %>
+        </div>
+        <div class="header-side">
+          <% if user_signed_in? %>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"  %>
+          <% end %>
+        </div>
       </div>
     </header>
     <%= yield %>

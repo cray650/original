@@ -1,7 +1,10 @@
-.main{
-  font-size: 30px;
+.new-main{
+  font-size: 50px;
   text-align: center;
   position: relative;
+}
+.time{
+  font-weight: bold;
 }
 .circle-attend {
   display: inline-block;
