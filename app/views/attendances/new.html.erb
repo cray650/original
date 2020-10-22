@@ -5,20 +5,22 @@
       <%= "#{@year}年#{@month}月#{@day}日(#{@strftime})" %>
     </div>
     <div class="hour">
-      <%= "#{@time.hour}:#{@time.min}:#{@time.sec}"%>
+      <%= "#{@time}"%>
     </div>
+    <%= f.hidden_field :year, value: @year %>
+    <%= f.hidden_field :month, value: @month %>
+    <%= f.hidden_field :day, value: @day %>
   </div>
     <div class="circle-attend">
-      <%= f.time_field :attending%>
-      <%= f.submit "出勤する" ,class:"a" %>
+      <%= f.hidden_field :in, value: @time %>
+      <%= f.submit '出勤' ,class:"new-submit"%>
     </div>
     <div class="circle-leave">
-      <%= f.time_field :leaving%>
-      <%= f.submit "退社する" ,class:"a" %>
+      <%= f.hidden_field :out, value: @time %>
     </div>
     
     <div class="main-menu">
-      <a href="#">出勤簿画面へ</a>
+      <a href="/attendances">出勤簿画面へ</a>
     </div>
   <% end %>
 </div>

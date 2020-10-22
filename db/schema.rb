@@ -13,10 +13,11 @@
 ActiveRecord::Schema.define(version: 2020_10_20_055954) do
 
   create_table "attendances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.time "attending", null: false
-    t.time "leaving", null: false
-    t.time "working_time", null: false
-    t.time "overtime", null: false
+    t.integer "year"
+    t.integer "month"
+    t.integer "day"
+    t.time "in"
+    t.time "out"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
