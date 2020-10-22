@@ -1,24 +1,53 @@
-# README
+#テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column      | Type    | Options     |
+| ----------- | ------- | ----------- |
+| employee_id | integer | null: false |
+| firstname   | string  | null: false |
+| lastname    | string  | null: false |
+| password    | string  | null: false |
+| admin       | boolean |             |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :attendences
+- has_one :salaries
 
-* Configuration
+## attendancesテーブル
 
-* Database creation
+| Column       | Type       | Options     |
+| ------------ | ---------- | ----------- |
+| attending    | time       | null: false |
+| leaving      | time       | null: false |
+| working-time | time       | null: false |
+| overtime     | time       | null: false |
+| user         | references | null: false |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+ - has_one :request
+ - belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+## salariesテーブル
 
-* Deployment instructions
+| Column | Type       | Options     |
+| ------ | ---------- | ----------- |
+| salary | string     | null: false |
+| user   | references | null: false |
 
-* ...
+### Association
+
+ - belongs_to :user
+
+## Requestsテーブル
+
+| Column      | Type       | Options     |
+| ----------- | ---------- | ----------- |
+| request     | string     | null: false |
+| attendence  | references | null: false |
+
+### Association
+
+- belongs_to :attendence

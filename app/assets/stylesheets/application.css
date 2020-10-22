@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+  box-sizing: border-box;
+}
+.header-main{
+  position: relative;
+}
+.title{
+  height: 70px;
+  border: 1px solid lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+}
+.btn{
+  color: lightblue;
+  text-decoration: none;
+}
+.logout{
+  text-decoration: none;
+  color: black;
+}
+.header-side{
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  font-size: 20px;
+}
+
+
